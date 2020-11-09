@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_first"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/emailSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/email_bar"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <EditText
+        android:id="@+id/passwordSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/password_bar"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/emailSignIn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/emailSignIn"
+        app:layout_constraintTop_toBottomOf="@id/emailSignIn"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#673AB7"
+        android:onClick="logIn"
+        android:text="Log in"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordSignIn"
+        app:layout_constraintStart_toStartOf="@+id/passwordSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/passwordSignIn" />
+
+    <TextView
+        android:id="@+id/goToSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="No account yet? Create one"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/signInButton"
+        app:layout_constraintStart_toStartOf="@id/signInButton"
+        app:layout_constraintTop_toBottomOf="@id/signInButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
