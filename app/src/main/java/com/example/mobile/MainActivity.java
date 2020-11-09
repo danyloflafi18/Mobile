@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             Intent signUpIntent = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(signUpIntent);
         });
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
     }
 
     public void logIn(View view) {
