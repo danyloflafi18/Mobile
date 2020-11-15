@@ -1,0 +1,5 @@
+<resources>
+    <string name="main">Mobile</string>
+    <string name="signUp">Sign Up</string>
+    <string name="signIn">Sign In</string>
+</resources>
