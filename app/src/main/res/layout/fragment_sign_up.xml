@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_first"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignUpActivity">
+
+    <EditText
+        android:id="@+id/nameSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:drawableStart="@drawable/name"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_single"
+        android:drawableStart="@drawable/email_bar"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/nameSignUp"
+        app:layout_constraintStart_toStartOf="@id/nameSignUp"
+        app:layout_constraintTop_toBottomOf="@id/nameSignUp" />
+
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_single"
+        android:drawableStart="@drawable/password_bar"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/emailSignUp"
+        app:layout_constraintStart_toStartOf="@id/emailSignUp"
+        app:layout_constraintTop_toBottomOf="@id/emailSignUp" />
+
+    <EditText
+        android:id="@+id/confirmPasswordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_single"
+        android:drawableStart="@drawable/confirm_password_bar"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/passwordSignUp"
+        app:layout_constraintStart_toStartOf="@id/passwordSignUp"
+        app:layout_constraintTop_toBottomOf="@id/passwordSignUp" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:backgroundTint="@color/purple_500"
+        android:onClick="signUp"
+        android:text="@string/sign_up"
+        app:cornerRadius="@dimen/btn_corner_radius"
+        app:layout_constraintEnd_toEndOf="@id/confirmPasswordSignUp"
+        app:layout_constraintStart_toStartOf="@id/confirmPasswordSignUp"
+        app:layout_constraintTop_toBottomOf="@id/confirmPasswordSignUp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

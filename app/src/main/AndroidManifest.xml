@@ -3,17 +3,19 @@
     package="com.example.mobile">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/main"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.Mobile">
-        <activity android:name=".SignUpActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/signUp">
-
-        </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".StartScreenActivity"
+            android:label="@string/startScreen"/>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/signUp"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
             android:label="@string/signIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
