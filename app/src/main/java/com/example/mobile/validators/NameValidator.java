@@ -2,7 +2,7 @@ package com.example.mobile.validators;
 
 import android.text.TextUtils;
 
-import com.example.mobile.validatorinterface.ICredentialValidator;
+import com.example.mobile.validatorInterface.ICredentialValidator;
 
 public class NameValidator implements ICredentialValidator {
     @Override

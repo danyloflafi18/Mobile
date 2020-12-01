@@ -2,7 +2,7 @@ package com.example.mobile.validators;
 
 import android.text.TextUtils;
 
-import com.example.mobile.validatorinterface.IConfirmPasswordValidator;
+import com.example.mobile.validatorInterface.IConfirmPasswordValidator;
 
 public class ConfirmPassword implements IConfirmPasswordValidator {
     @Override

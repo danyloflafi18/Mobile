@@ -2,21 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobile">
 
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/main"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.Mobile">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".StartScreenActivity"
-            android:label="@string/startScreen"/>
+            android:name=".StartScreenActivity"/>
         <activity
-            android:name=".SignUpActivity"
-            android:label="@string/signUp"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/signIn">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

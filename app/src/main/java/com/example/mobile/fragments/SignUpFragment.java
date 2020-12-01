@@ -1,6 +1,6 @@
 package com.example.mobile.fragments;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,15 +12,39 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.mobile.R;
-import com.example.mobile.StartScreenActivity;
-import com.example.mobile.viewmodel.SignUpViewModel;
+import com.example.mobile.clickListener.ISignUp;
+import com.example.mobile.viewModel.SignUpViewModel;
 
+import org.jetbrains.annotations.NotNull;
 
 public class SignUpFragment extends Fragment {
 
-    private SignUpViewModel viewModel;
+    private SignUpViewModel signUpViewModel;
+    private EditText nameEditText;
+    private EditText emailAddressEditText;
+    private EditText passwordEditText;
+    private EditText confirmPasswordEditText;
+    private Button signUpButton;
+    private Toolbar signUpToolbar;
+    private ISignUp signUp;
+    private ISignInPage signInPage;
+
+    public interface ISignInPage {
+        void onSignInPageClicked();
+    }
+
+    private final View.OnClickListener onSignUpClickListener = view -> {
+        String name = nameEditText.getText().toString();
+        String email = emailAddressEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        String confirmPassword = confirmPasswordEditText.getText().toString();
+        signUpViewModel.signUp(name, email, password, confirmPassword);
+    };
+
+    private final View.OnClickListener onToolbarClickListener = view -> signInPage.onSignInPageClicked();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,45 +52,67 @@ public class SignUpFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NotNull Context context) {
+        super.onAttach(context);
+        try {
+            signInPage = (SignUpFragment.ISignInPage) context;
+            signUp = (ISignUp) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + "must implement ISignUpPage");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        signInPage =  null;
+        signUp =  null;
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_sign_up, container, false);
+        initUI(rootView);
 
-        EditText nameEditText = rootView.findViewById(R.id.nameSignUp);
-        EditText emailAddressEditText = rootView.findViewById(R.id.emailSignUp);
-        EditText passwordEditText = rootView.findViewById(R.id.passwordSignUp);
-        EditText confirmPasswordEditText = rootView.findViewById(R.id.confirmPasswordSignUp);
-        Button signUpButton = rootView.findViewById(R.id.signUpButton);
+        signUpButton.setOnClickListener(onSignUpClickListener);
+        signUpToolbar.setNavigationOnClickListener(onToolbarClickListener);
 
         registerViewModel();
-
-        signUpButton.setOnClickListener(view -> {
-            String name = nameEditText.getText().toString();
-            String email = emailAddressEditText.getText().toString();
-            String password = passwordEditText.getText().toString();
-            String confirmPassword = confirmPasswordEditText.getText().toString();
-            if(viewModel.signUp(name, email, password, confirmPassword)) {
-                Intent startScreenIntent = new Intent(getContext(), StartScreenActivity.class);
-                startActivity(startScreenIntent);
-            }
-        });
+        checkIsSignedUp();
         return rootView;
     }
 
     private void registerViewModel() {
-        viewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
-        viewModel.getIsSignedUp().observe(this, isSignedUp -> {
-            if (isSignedUp) {
-                showMessage("Successfully signed up!");
-            }else{
-                showMessage("Signing up is failed!");
-            }
-        });
-        viewModel.getError().observe(this, this::showMessage);
+        signUpViewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
+        signUpViewModel.getError().observe(getViewLifecycleOwner(), this::showMessage);
     }
 
-    private void showMessage(String message){
+    private void showMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void initUI(View signUpView) {
+        nameEditText = signUpView.findViewById(R.id.nameSignUp);
+        emailAddressEditText = signUpView.findViewById(R.id.emailSignUp);
+        passwordEditText = signUpView.findViewById(R.id.passwordSignUp);
+        confirmPasswordEditText = signUpView.findViewById(R.id.confirmPasswordSignUp);
+        signUpButton = signUpView.findViewById(R.id.signUpButton);
+        signUpToolbar = signUpView.findViewById(R.id.toolbarSignUp);
+    }
+
+    private void toStartScreen() {
+        signUp.onSignUpClicked();
+    }
+
+    private void checkIsSignedUp() {
+        signUpViewModel.getIsSignedUp().observe(getViewLifecycleOwner(), isSignedUp -> {
+            if (isSignedUp) {
+                toStartScreen();
+                showMessage("Signed up was successful!");
+            } else {
+                showMessage("Could not sign up!");
+            }
+        });
     }
 }

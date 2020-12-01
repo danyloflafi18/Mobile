@@ -3,7 +3,7 @@ package com.example.mobile.validators;
 import android.text.TextUtils;
 import android.util.Patterns;
 
-import com.example.mobile.validatorinterface.ICredentialValidator;
+import com.example.mobile.validatorInterface.ICredentialValidator;
 
 public class EmailValidator  implements ICredentialValidator {
     @Override

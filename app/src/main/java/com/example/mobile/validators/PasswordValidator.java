@@ -2,7 +2,7 @@ package com.example.mobile.validators;
 
 import android.text.TextUtils;
 
-import com.example.mobile.validatorinterface.ICredentialValidator;
+import com.example.mobile.validatorInterface.ICredentialValidator;
 
 public class PasswordValidator implements ICredentialValidator {
     private static final int PASSWORD_MIN_LENGTH = 8;
