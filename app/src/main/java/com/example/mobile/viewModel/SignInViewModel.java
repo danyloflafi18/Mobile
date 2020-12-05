@@ -19,7 +19,7 @@ public class SignInViewModel extends ViewModel {
 
     private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
-    public void firebaseSignIn(String email, String password) {
+    private void firebaseSignIn(String email, String password) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

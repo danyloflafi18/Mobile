@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.3" />
 
     <EditText
         android:id="@+id/emailSignIn"
@@ -34,12 +34,12 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/passwordSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guidelineSignIn"
         app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintBottom_toTopOf="@id/passwordSignIn"
-        app:layout_constraintVertical_chainStyle="packed"/>
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/passwordSignIn"
@@ -65,7 +65,7 @@
         app:layout_constraintBottom_toTopOf="@id/goToSignUp"
         app:layout_constraintEnd_toEndOf="@id/passwordSignIn"
         app:layout_constraintStart_toStartOf="@id/passwordSignIn"
-        app:layout_constraintTop_toBottomOf="@id/passwordSignIn"/>
+        app:layout_constraintTop_toBottomOf="@id/passwordSignIn" />
 
     <TextView
         android:id="@+id/goToSignUp"

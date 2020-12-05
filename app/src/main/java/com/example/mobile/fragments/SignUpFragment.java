@@ -1,5 +1,6 @@
 package com.example.mobile.fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mobile.R;
@@ -65,8 +67,8 @@ public class SignUpFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        signInPage =  null;
-        signUp =  null;
+        signInPage = null;
+        signUp = null;
     }
 
     @Override
@@ -101,15 +103,23 @@ public class SignUpFragment extends Fragment {
         signUpToolbar = signUpView.findViewById(R.id.toolbarSignUp);
     }
 
-    private void toStartScreen() {
-        signUp.onSignUpClicked();
+    private void toStartScreen(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(message);
+        builder.setTitle("Info");
+        builder.setPositiveButton("OK", (dialog, which) -> {
+            signUp.onSignUpClicked();
+            dialog.dismiss();
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     private void checkIsSignedUp() {
         signUpViewModel.getIsSignedUp().observe(getViewLifecycleOwner(), isSignedUp -> {
             if (isSignedUp) {
-                toStartScreen();
-                showMessage("Signed up was successful!");
+                toStartScreen("Signed up was successful!");
             } else {
                 showMessage("Could not sign up!");
             }
