@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".fragments.SignUpFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/signUp" />
+
+    <EditText
+        android:id="@+id/nameSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:drawableStart="@drawable/name"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineSignUp"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/emailSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:drawableStart="@drawable/email_bar"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/nameSignUp"
+        app:layout_constraintStart_toStartOf="@id/nameSignUp"
+        app:layout_constraintTop_toBottomOf="@id/nameSignUp" />
+
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:drawableStart="@drawable/password_bar"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/emailSignUp"
+        app:layout_constraintStart_toStartOf="@id/emailSignUp"
+        app:layout_constraintTop_toBottomOf="@id/emailSignUp" />
+
+    <EditText
+        android:id="@+id/confirmPasswordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:drawableStart="@drawable/confirm_password_bar"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/passwordSignUp"
+        app:layout_constraintStart_toStartOf="@id/passwordSignUp"
+        app:layout_constraintTop_toBottomOf="@id/passwordSignUp" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/ui_spacing_double"
+        android:background="@drawable/button"
+        android:text="@string/signUp"
+        app:layout_constraintEnd_toEndOf="@id/confirmPasswordSignUp"
+        app:layout_constraintStart_toStartOf="@id/confirmPasswordSignUp"
+        app:layout_constraintTop_toBottomOf="@id/confirmPasswordSignUp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,4 +16,5 @@
     <style name="SignUp">
         <item name="colorPrimary">@color/purple_500</item>
     </style>
+
 </resources>
