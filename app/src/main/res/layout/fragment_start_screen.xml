@@ -5,6 +5,7 @@
     android:id="@+id/startScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    android:background="@drawable/background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSignUp"
@@ -28,5 +29,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/user_item" />
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/startScreen" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hey"
+        android:textSize="@dimen/hey_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarSignUp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
