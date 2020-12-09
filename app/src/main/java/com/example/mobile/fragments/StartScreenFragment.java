@@ -51,7 +51,7 @@ public class StartScreenFragment extends Fragment {
         userList.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL,
                 false));
-        userList.setAdapter(new PeopleAdapter());
+        userList.setAdapter(peopleAdapter);
     }
 
 }

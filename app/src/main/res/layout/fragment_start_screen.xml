@@ -6,28 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<androidx.appcompat.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSignUp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/startScreen" />-->
+        app:title="@string/startScreen" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/user_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="5"
         tools:listitem="@layout/user_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

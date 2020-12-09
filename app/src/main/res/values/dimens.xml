@@ -3,7 +3,10 @@
     <dimen name="ui_spacing_single">8dp</dimen>
     <dimen name="ui_spacing_double">16dp</dimen>
     <dimen name="btn_corner_radius">40dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
     <dimen name="hey_size">100sp</dimen>
+    <dimen name="recycle_view_margin">60dp</dimen>
     <!--
     Because the window insets on round devices are larger than 15dp, this padding only applies
     to square screens.
