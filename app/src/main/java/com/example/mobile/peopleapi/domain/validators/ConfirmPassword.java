@@ -1,8 +1,8 @@
-package com.example.mobile.validators;
+package com.example.mobile.peopleapi.domain.validators;
 
 import android.text.TextUtils;
 
-import com.example.mobile.validatorInterface.IConfirmPasswordValidator;
+import com.example.mobile.peopleapi.domain.validatorInterface.IConfirmPasswordValidator;
 
 public class ConfirmPassword implements IConfirmPasswordValidator {
     @Override

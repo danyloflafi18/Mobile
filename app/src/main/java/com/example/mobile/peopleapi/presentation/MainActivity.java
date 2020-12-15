@@ -1,14 +1,15 @@
-package com.example.mobile;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mobile.peopleapi.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.mobile.clickListener.ISignIn;
-import com.example.mobile.clickListener.ISignUp;
-import com.example.mobile.fragments.SignInFragment;
-import com.example.mobile.fragments.SignUpFragment;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mobile.R;
+import com.example.mobile.peopleapi.domain.clickListener.ISignIn;
+import com.example.mobile.peopleapi.domain.clickListener.ISignUp;
+import com.example.mobile.peopleapi.presentation.fragments.SignInFragment;
+import com.example.mobile.peopleapi.presentation.fragments.SignUpFragment;
 
 public class MainActivity extends AppCompatActivity implements SignUpFragment.ISignInPage,
         SignInFragment.ISignUpPage, ISignUp, ISignIn {

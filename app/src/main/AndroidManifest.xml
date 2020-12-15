@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".StartScreenActivity"/>
+            android:name=".peopleapi.presentation.StartScreenActivity"/>
         <activity
-            android:name=".MainActivity">
+            android:name=".peopleapi.presentation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

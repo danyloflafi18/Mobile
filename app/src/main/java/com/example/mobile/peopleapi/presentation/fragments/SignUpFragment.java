@@ -1,4 +1,4 @@
-package com.example.mobile.fragments;
+package com.example.mobile.peopleapi.presentation.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -17,8 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mobile.R;
-import com.example.mobile.clickListener.ISignUp;
-import com.example.mobile.viewModel.SignUpViewModel;
+import com.example.mobile.peopleapi.domain.clickListener.ISignUp;
+import com.example.mobile.peopleapi.presentation.viewModel.SignUpViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

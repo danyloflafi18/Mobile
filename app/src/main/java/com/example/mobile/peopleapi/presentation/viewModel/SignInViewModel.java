@@ -1,11 +1,11 @@
-package com.example.mobile.viewModel;
+package com.example.mobile.peopleapi.presentation.viewModel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.mobile.validatorInterface.ICredentialValidator;
-import com.example.mobile.validators.EmailValidator;
-import com.example.mobile.validators.PasswordValidator;
+import com.example.mobile.peopleapi.domain.validatorInterface.ICredentialValidator;
+import com.example.mobile.peopleapi.domain.validators.EmailValidator;
+import com.example.mobile.peopleapi.domain.validators.PasswordValidator;
 import com.google.firebase.auth.FirebaseAuth;
 
 import timber.log.Timber;

@@ -1,10 +1,11 @@
-package com.example.mobile;
+package com.example.mobile.peopleapi.presentation;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobile.fragments.StartScreenFragment;
+import com.example.mobile.R;
+import com.example.mobile.peopleapi.presentation.fragments.StartScreenFragment;
 
 public class StartScreenActivity extends AppCompatActivity {
 

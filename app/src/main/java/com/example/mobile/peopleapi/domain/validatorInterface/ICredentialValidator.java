@@ -1,4 +1,4 @@
-package com.example.mobile.validatorInterface;
+package com.example.mobile.peopleapi.domain.validatorInterface;
 
 public interface ICredentialValidator {
     boolean isValid(String credential);

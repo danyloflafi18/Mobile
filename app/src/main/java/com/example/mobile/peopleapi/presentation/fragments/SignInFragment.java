@@ -1,12 +1,7 @@
-package com.example.mobile.fragments;
+package com.example.mobile.peopleapi.presentation.fragments;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.mobile.R;
-import com.example.mobile.clickListener.ISignIn;
-import com.example.mobile.viewModel.SignInViewModel;
+import com.example.mobile.peopleapi.domain.clickListener.ISignIn;
+import com.example.mobile.peopleapi.presentation.viewModel.SignInViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,9 +1,9 @@
-package com.example.mobile.validators;
+package com.example.mobile.peopleapi.domain.validators;
 
 import android.text.TextUtils;
 import android.util.Patterns;
 
-import com.example.mobile.validatorInterface.ICredentialValidator;
+import com.example.mobile.peopleapi.domain.validatorInterface.ICredentialValidator;
 
 public class EmailValidator  implements ICredentialValidator {
     @Override

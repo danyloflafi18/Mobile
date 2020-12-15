@@ -1,4 +1,4 @@
-package com.example.mobile.fragments;
+package com.example.mobile.peopleapi.presentation.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
