@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main" translatable="false">Mobile</string>
-    <string name="signUp" translatable="false">Sign up</string>
-    <string name="signIn" translatable="false">Sign in</string>
-    <string name="startScreen" translatable="false">Start Screen</string>
-    <string name="newsItem" translatable="false">News detail</string>
+    <string name="main">Mobiltelefon</string>
+    <string name="signUp">Anmelden</string>
+    <string name="signIn">Anmelden</string>
+    <string name="startScreen">Startbildschirm</string>
+    <string name="newsItem">Nachrichten Detail</string>
     <string name="email" translatable="false">Email</string>
     <string name="password" translatable="false">Password</string>
     <string name="log_in" translatable="false">Log in</string>

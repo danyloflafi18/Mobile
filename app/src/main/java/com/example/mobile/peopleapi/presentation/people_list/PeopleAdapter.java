@@ -26,7 +26,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleViewHolder>{
         this.userList.clear();
         this.userList.addAll(userList);
         notifyDataSetChanged();
-
     }
 
     @NonNull

@@ -24,7 +24,6 @@ import com.example.mobile.peopleapi.presentation.SharedPrefs;
 import com.example.mobile.peopleapi.presentation.activities.MyProfileActivity;
 import com.example.mobile.peopleapi.presentation.activities.NewsActivity;
 import com.example.mobile.peopleapi.presentation.people_list.OnNewsListener;
-import com.example.mobile.peopleapi.presentation.people_list.OnProfileListener;
 import com.example.mobile.peopleapi.presentation.people_list.PeopleAdapter;
 import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
 import com.example.mobile.peopleapi.presentation.viewModel.PeopleViewModel;
@@ -43,7 +42,6 @@ public class StartScreenFragment extends Fragment implements OnNewsListener {
     private PeopleViewModel peopleViewModel;
     private ProgressBar loadingIndicator;
     private final List<UserViewData> userList = new ArrayList<>();
-    private OnProfileListener onProfileListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,17 +125,20 @@ public class StartScreenFragment extends Fragment implements OnNewsListener {
 
     private void initRecycler(View view) {
         RecyclerView recyclerView = view.findViewById(R.id.user_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),
-                LinearLayoutManager.VERTICAL,
-                false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         peopleAdapter = new PeopleAdapter(userList, this);
         recyclerView.setAdapter(peopleAdapter);
     }
 
     @Override
     public void onNewsClick(int position) {
-        userList.get(position);
         Intent intent = new Intent(getActivity(), NewsActivity.class);
+
+        UserViewData userViewData = userList.get(position);
+        intent.putExtra("urlToImage", userViewData.getUrlToImage());
+        intent.putExtra("title", userViewData.getTitle());
+        intent.putExtra("author", userViewData.getAuthor());
+        intent.putExtra("date", userViewData.getPublishedAt());
         startActivity(intent);
     }
 }

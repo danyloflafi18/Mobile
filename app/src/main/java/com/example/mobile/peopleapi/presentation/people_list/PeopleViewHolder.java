@@ -48,6 +48,4 @@ public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.On
     public void onClick(View view) {
         onNewsListener.onNewsClick(getAdapterPosition());
     }
-
-
 }
