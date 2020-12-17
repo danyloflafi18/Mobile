@@ -10,12 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobile.R;
 import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleViewHolder>{
 
-    private final List<UserViewData> userList = new ArrayList<>();
+    private final List<UserViewData> userList;
+    private final OnNewsListener onNewsListener;
+
+    public PeopleAdapter(List<UserViewData> userList, OnNewsListener onNewsListener) {
+        this.userList = userList;
+        this.onNewsListener = onNewsListener;
+    }
 
     public void setItems(List<UserViewData> userList){
         this.userList.clear();
@@ -28,7 +33,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleViewHolder>{
     @Override
     public PeopleViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.user_item, viewGroup, false);
-        return new PeopleViewHolder(itemView);
+        return new PeopleViewHolder(itemView, onNewsListener);
     }
 
     @Override

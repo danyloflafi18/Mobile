@@ -1,4 +1,4 @@
-package com.example.mobile.peopleapi.presentation;
+package com.example.mobile.peopleapi.presentation.viewModel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

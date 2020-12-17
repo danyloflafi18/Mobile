@@ -49,7 +49,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     //Gson
-    implementation"com.google.code.gson:gson:2.8.6"
+    implementation "com.google.code.gson:gson:2.8.6"
 
     //Retrofit
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
@@ -62,11 +62,16 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
 
     //view model
-    implementation"androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation"androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
 
     //Glide
-    implementation"com.github.bumptech.glide:glide:4.11.0"
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.11.0"
 
+    //SwipeRefresh
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //CircleImage
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

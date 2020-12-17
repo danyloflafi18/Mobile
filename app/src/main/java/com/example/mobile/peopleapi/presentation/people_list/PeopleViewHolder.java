@@ -11,14 +11,16 @@ import com.bumptech.glide.Glide;
 import com.example.mobile.R;
 import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
 
-public class PeopleViewHolder extends RecyclerView.ViewHolder {
+public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final TextView author;
     private final TextView title;
     private final TextView published_at;
 
     private final ImageView url_to_image;
 
-    public PeopleViewHolder(@NonNull View itemView) {
+    OnNewsListener onNewsListener;
+
+    public PeopleViewHolder(@NonNull View itemView, OnNewsListener onNewsListener) {
         super(itemView);
 
         author = itemView.findViewById(R.id.author);
@@ -26,6 +28,9 @@ public class PeopleViewHolder extends RecyclerView.ViewHolder {
         published_at = itemView.findViewById(R.id.published_at);
 
         url_to_image = itemView.findViewById(R.id.url_to_image);
+
+        this.onNewsListener = onNewsListener;
+        itemView.setOnClickListener(this);
     }
 
     protected void bindTo(UserViewData userViewData) {
@@ -38,4 +43,11 @@ public class PeopleViewHolder extends RecyclerView.ViewHolder {
                 .fitCenter()
                 .into(url_to_image);
     }
+
+    @Override
+    public void onClick(View view) {
+        onNewsListener.onNewsClick(getAdapterPosition());
+    }
+
+
 }
