@@ -15,7 +15,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
-public class PeopleViewModel extends ViewModel {
+public class NewsViewModel extends ViewModel {
 
     private final LoadUserUseCase loadUserUseCase;
 
@@ -24,7 +24,7 @@ public class PeopleViewModel extends ViewModel {
     private final MutableLiveData<String> errorMessage = new MutableLiveData<>();
     private final MutableLiveData<List<UserViewData>> responseData = new MutableLiveData<>();
 
-    public PeopleViewModel(LoadUserUseCase loadUserUseCase) {
+    public NewsViewModel(LoadUserUseCase loadUserUseCase) {
         this.loadUserUseCase = loadUserUseCase;
     }
 

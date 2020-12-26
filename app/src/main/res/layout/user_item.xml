@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="@dimen/ui_spacing_single"
-    android:layout_marginEnd="@dimen/ui_spacing_single"
     android:layout_marginStart="@dimen/ui_spacing_single"
+    android:layout_marginEnd="@dimen/ui_spacing_single"
+    android:layout_marginBottom="@dimen/ui_spacing_single"
     app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="@dimen/card_elevation">
 
@@ -20,6 +20,7 @@
             android:id="@+id/url_to_image"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:contentDescription="@string/news_photo"
             android:src="@drawable/ic_launcher_foreground" />
 
         <LinearLayout

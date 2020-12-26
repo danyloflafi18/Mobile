@@ -14,7 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.domain.clickListener.ISignIn;
+import com.example.mobile.peopleapi.presentation.clickListener.ISignIn;
+import com.example.mobile.peopleapi.presentation.clickListener.OnLanguageListener;
 import com.example.mobile.peopleapi.presentation.viewModel.SignInViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -25,9 +26,11 @@ public class SignInFragment extends Fragment {
     private EditText emailAddressEditText;
     private EditText passwordEditText;
     private Button signInButton;
+    private Button languageButton;
     private TextView signUp;
     private ISignUpPage signUpPage;
     private ISignIn signIn;
+    private OnLanguageListener onLanguageListener;
 
     public interface ISignUpPage {
         void onSignUpPageClicked();
@@ -53,8 +56,9 @@ public class SignInFragment extends Fragment {
         try {
             signUpPage = (ISignUpPage) context;
             signIn = (ISignIn) context;
+            onLanguageListener = (OnLanguageListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + "must implement ISignUpPage");
+            throw new ClassCastException(context.toString() + "must implement ISignUpPage or ISignIn or OnLanguageListener");
         }
     }
 
@@ -63,6 +67,7 @@ public class SignInFragment extends Fragment {
         super.onDetach();
         signUpPage = null;
         signIn = null;
+        onLanguageListener = null;
     }
 
     @Override
@@ -95,6 +100,8 @@ public class SignInFragment extends Fragment {
         passwordEditText = signInView.findViewById(R.id.passwordSignIn);
         signInButton = signInView.findViewById(R.id.signInButton);
         signUp = signInView.findViewById(R.id.goToSignUp);
+        languageButton = signInView.findViewById(R.id.language_button);
+        languageButton.setOnClickListener(view -> onLanguageListener.onLanguageClick());
     }
 
     private void toStartScreen() {

@@ -9,16 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile.R;
+import com.example.mobile.peopleapi.presentation.clickListener.OnNewsListener;
 import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
 
 public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final TextView author;
     private final TextView title;
     private final TextView published_at;
-
     private final ImageView url_to_image;
 
-    OnNewsListener onNewsListener;
+    private final OnNewsListener onNewsListener;
 
     public PeopleViewHolder(@NonNull View itemView, OnNewsListener onNewsListener) {
         super(itemView);

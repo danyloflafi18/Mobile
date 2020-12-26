@@ -30,14 +30,14 @@ public class NewsActivity extends AppCompatActivity {
         setNews();
     }
 
-    private void initUi(){
+    private void initUi() {
         description = findViewById(R.id.description);
         textAuthor = findViewById(R.id.author);
         textDate = findViewById(R.id.date);
         imageView = findViewById(R.id.image);
     }
 
-    private void getNews(){
+    private void getNews() {
         Intent intent = getIntent();
         image = intent.getStringExtra("urlToImage");
         title = intent.getStringExtra("title");
@@ -45,7 +45,7 @@ public class NewsActivity extends AppCompatActivity {
         date = intent.getStringExtra("date");
     }
 
-    private void setNews(){
+    private void setNews() {
         Glide.with(this)
                 .load(image)
                 .fitCenter()

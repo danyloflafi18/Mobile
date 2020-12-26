@@ -3,10 +3,6 @@ package com.example.mobile.peopleapi.presentation.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +11,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.domain.clickListener.ISignUp;
+import com.example.mobile.peopleapi.presentation.clickListener.ISignUp;
 import com.example.mobile.peopleapi.presentation.viewModel.SignUpViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -103,9 +101,9 @@ public class SignUpFragment extends Fragment {
         signUpToolbar = signUpView.findViewById(R.id.toolbarSignUp);
     }
 
-    private void toStartScreen(String message) {
+    private void toStartScreen() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(message);
+        builder.setMessage("Signed up was successful!");
         builder.setTitle("Info");
         builder.setPositiveButton("OK", (dialog, which) -> {
             signUp.onSignUpClicked();
@@ -119,7 +117,7 @@ public class SignUpFragment extends Fragment {
     private void checkIsSignedUp() {
         signUpViewModel.getIsSignedUp().observe(getViewLifecycleOwner(), isSignedUp -> {
             if (isSignedUp) {
-                toStartScreen("Signed up was successful!");
+                toStartScreen();
             } else {
                 showMessage("Could not sign up!");
             }

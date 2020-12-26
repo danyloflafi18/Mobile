@@ -1,25 +1,31 @@
 package com.example.mobile.peopleapi.presentation.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.domain.clickListener.ISignIn;
-import com.example.mobile.peopleapi.domain.clickListener.ISignUp;
-import com.example.mobile.peopleapi.domain.translate.LocaleManager;
+import com.example.mobile.peopleapi.presentation.clickListener.ISignIn;
+import com.example.mobile.peopleapi.presentation.clickListener.ISignUp;
+import com.example.mobile.peopleapi.presentation.clickListener.OnLanguageListener;
 import com.example.mobile.peopleapi.presentation.fragments.SignInFragment;
 import com.example.mobile.peopleapi.presentation.fragments.SignUpFragment;
+import com.example.mobile.peopleapi.presentation.helpers.LanguageManager;
+import com.example.mobile.peopleapi.presentation.helpers.SharedPrefManager;
+import com.example.mobile.peopleapi.presentation.shared_pref.SharedPrefs;
 
 public class MainActivity extends AppCompatActivity implements SignUpFragment.ISignInPage,
-        SignInFragment.ISignUpPage, ISignUp, ISignIn {
+        SignInFragment.ISignUpPage, ISignUp, ISignIn, OnLanguageListener {
 
+    public static final String DE_LANGUAGE = "de";
+    public static final String EN_LANGUAGE = "en";
     private SignUpFragment signUpFragment;
     private SignInFragment signInFragment;
-    private LocaleManager localeManager;
+    private final LanguageManager languageManager = new LanguageManager();
+    private final Configuration configuration = new Configuration();
+    private final SharedPrefManager sharedPrefManager = new SharedPrefManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,26 +65,19 @@ public class MainActivity extends AppCompatActivity implements SignUpFragment.IS
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.toolbar_translate, menu);
-        return true;
-    }
+    public void onLanguageClick() {
+        SharedPrefs sharedPrefs = sharedPrefManager.initSharedPrefs(this);
+        String language = sharedPrefs.getLanguage();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.local_english:
-                setNewLocale(this);
-                return true;
+        if (language.equals(DE_LANGUAGE)) {
+            sharedPrefs.setLanguage(EN_LANGUAGE);
+            getResources().updateConfiguration(configuration, null);
+        } else if (language.equals(EN_LANGUAGE)) {
+            sharedPrefs.setLanguage(DE_LANGUAGE);
+            languageManager.setLanguage(DE_LANGUAGE, configuration, this);
         }
-        return super.onOptionsItemSelected(item);
-    }
 
-    private void setNewLocale(AppCompatActivity context) {
-        LocaleManager.setNewLocale(this, LocaleManager.ENGLISH);
-        Intent intent = context.getIntent();
-        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

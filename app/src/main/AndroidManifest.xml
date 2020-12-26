@@ -7,17 +7,14 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/main"
-        android:roundIcon="@mipmap/ic_launcher_round">
-        <activity android:name=".peopleapi.presentation.activities.MyProfileActivity"></activity>
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".peopleapi.presentation.activities.NewsActivity"
-            android:theme="@style/Theme.AppCompat.Light"
             android:label="@string/newsItem"/>
         <activity android:name=".peopleapi.presentation.activities.StartScreenActivity"
-            android:theme="@style/Theme.AppCompat.Light"
             android:label="@string/startScreen"/>
         <activity android:name=".peopleapi.presentation.activities.MainActivity"
-
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:label="@string/signIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

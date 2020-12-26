@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile.R;
+import com.example.mobile.peopleapi.presentation.clickListener.OnNewsListener;
 import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
 
 import java.util.List;
