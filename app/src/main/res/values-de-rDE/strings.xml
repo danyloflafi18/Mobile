@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main"> Mobil </string>
+    <string name="signUp"> Anmelden </string>
+    <string name="signIn"> Anmelden </string>
+    <string name="startScreen"> Startbildschirm </string>
+    <string name="newsItem"> Nachrichtendetail </string>
+    <string name="news_photo">Nachrichtenfoto</string>
+    <string name="email"> E-Mail </string>
+    <string name="password"> Passwort </string>
+    <string name="log_in"> Anmelden </string>
+    <string name="no_account_yet_create_one"> Noch kein Konto? Erstellen Sie eine </string>
+    <string name="name"> Name </string>
+    <string name="confirm_password"> Passwort bestätigen </string>
+    <string name="hey"> Hey! </string>
+    <string name="change_email"> E-Mail ändern </string>
+    <string name="my_profile"> Mein Profil </string>
+    <string name="change"> Ändern Sie </string>
+    <string name="language"> Sprache </string>
+    <string name="hello_blank_fragment"> Hallo leeres Fragment </string>
+    <string name="author"> Autor </string>
+    <string name="brief_description"> Kurzbeschreibung </string>
+    <string name="_01_january_1990">01 Januar 1990</string>
+</resources>
