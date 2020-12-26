@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobile">
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+=======
+  
+    <uses-permission android:name="android.permission.INTERNET"/
+                     >
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/main"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+<<<<<<< HEAD
         <activity android:name=".peopleapi.presentation.activities.NewsActivity"
             android:label="@string/newsItem"/>
         <activity android:name=".peopleapi.presentation.activities.StartScreenActivity"
             android:label="@string/startScreen"/>
         <activity android:name=".peopleapi.presentation.activities.MainActivity"
             android:label="@string/signIn">
+=======
+        <activity
+            android:name=".StartScreenActivity"/>
+        <activity
+            android:name=".MainActivity">
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

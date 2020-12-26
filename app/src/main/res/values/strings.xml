@@ -3,8 +3,11 @@
     <string name="signUp">Sign up</string>
     <string name="signIn">Sign in</string>
     <string name="startScreen">Start Screen</string>
+<<<<<<< HEAD
     <string name="newsItem">News detail</string>
     <string name="news_photo">News photo</string>
+=======
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="log_in">Log in</string>
@@ -12,6 +15,7 @@
     <string name="name">Name</string>
     <string name="confirm_password">Confirm password</string>
     <string name="hey">Hey!</string>
+<<<<<<< HEAD
     <string name="change_email">Change email</string>
     <string name="my_profile">My profile</string>
     <string name="change">Change</string>
@@ -21,4 +25,8 @@
     <string name="author">Author</string>
     <string name="brief_description">Brief description</string>
     <string name="_01_january_1990">01 January 1990</string>
+=======
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
 </resources>

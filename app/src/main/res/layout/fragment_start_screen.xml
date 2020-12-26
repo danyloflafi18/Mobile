@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/startScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<<<<<<< HEAD
 
 
     <FrameLayout
@@ -44,3 +50,41 @@
     </FrameLayout>
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+=======
+    android:background="@drawable/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/startScreen" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/user_item" />
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/startScreen" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hey"
+        android:textSize="@dimen/hey_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarSignUp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231

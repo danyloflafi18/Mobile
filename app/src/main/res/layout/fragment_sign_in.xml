@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+<<<<<<< HEAD
     tools:context=".peopleapi.presentation.activities.MainActivity">
+=======
+    tools:context=".MainActivity">
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSignUp"
@@ -16,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:title="@string/signIn">
 
         <Button
@@ -26,6 +31,9 @@
             android:layout_gravity="right"
             android:layout_marginEnd="@dimen/ui_spacing_single"/>
     </androidx.appcompat.widget.Toolbar>
+=======
+        app:title="@string/signIn" />
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSignIn"

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activityStartScreen"
+=======
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/startScreenContainer"
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

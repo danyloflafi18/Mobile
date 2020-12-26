@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 <resources></resources>
+=======
+<resources>
+    <string name="hello_world">Hello Round World!</string>
+</resources>
+>>>>>>> 0359155fb3caa93418ca357293a32c18d26c9231
