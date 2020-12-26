@@ -8,15 +8,13 @@ import com.example.mobile.peopleapi.data.repository.RemoteRepository;
 import com.example.mobile.peopleapi.domain.repository.IRepository;
 import com.example.mobile.peopleapi.domain.use_cases.LoadNewsUseCase;
 
-public class ViewModelFactory implements ViewModelProvider.Factory {
-
-    private final IRepository iRepository = new RemoteRepository();
-    private final LoadNewsUseCase loadUserUseCase = new LoadNewsUseCase(iRepository);
-
+public class NewsItemViewModelFactory implements ViewModelProvider.Factory{
+    private final IRepository repository = new RemoteRepository();
+    private final LoadNewsUseCase loadNewsUseCase = new LoadNewsUseCase(repository);
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new NewsViewModel(loadUserUseCase);
+        return (T) new NewsItemViewModel(loadNewsUseCase);
     }
 }

@@ -7,9 +7,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.presentation.clickListener.ISignIn;
-import com.example.mobile.peopleapi.presentation.clickListener.ISignUp;
-import com.example.mobile.peopleapi.presentation.clickListener.OnLanguageListener;
+import com.example.mobile.peopleapi.presentation.listener.ISignIn;
+import com.example.mobile.peopleapi.presentation.listener.ISignUp;
+import com.example.mobile.peopleapi.presentation.listener.OnLanguageListener;
 import com.example.mobile.peopleapi.presentation.fragments.SignInFragment;
 import com.example.mobile.peopleapi.presentation.fragments.SignUpFragment;
 import com.example.mobile.peopleapi.presentation.helpers.LanguageManager;

@@ -6,6 +6,6 @@ import io.reactivex.Single;
 
 public interface IRepository {
 
-    Single<Example> loadUsers();
+    Single<Example> loadNews();
 
 }

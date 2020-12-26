@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.presentation.clickListener.OnNewsListener;
-import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
+import com.example.mobile.peopleapi.presentation.listener.OnNewsListener;
+import com.example.mobile.peopleapi.presentation.ui_data.NewsViewData;
 
 public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final TextView author;
@@ -33,7 +33,7 @@ public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.On
         itemView.setOnClickListener(this);
     }
 
-    protected void bindTo(UserViewData userViewData) {
+    protected void bindTo(NewsViewData userViewData) {
         author.setText(userViewData.getAuthor());
         title.setText(userViewData.getTitle());
         published_at.setText(userViewData.getPublishedAt());

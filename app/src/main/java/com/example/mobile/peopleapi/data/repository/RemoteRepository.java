@@ -39,7 +39,7 @@ public class RemoteRepository implements IRepository {
     }
 
     @Override
-    public Single<Example> loadUsers() {
+    public Single<Example> loadNews() {
         return service.loadUsers(SOURCE, API_KEY);
     }
 }

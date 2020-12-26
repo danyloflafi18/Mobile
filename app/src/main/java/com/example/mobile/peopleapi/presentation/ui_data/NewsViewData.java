@@ -1,12 +1,12 @@
 package com.example.mobile.peopleapi.presentation.ui_data;
 
-public class UserViewData {
+public class NewsViewData {
     private String author;
     private String title;
     private String publishedAt;
     private String urlToImage;
 
-    public UserViewData(String author, String title, String publishedAt, String urlToImage) {
+    public NewsViewData(String author, String title, String publishedAt, String urlToImage) {
         this.author = author;
         this.title = title;
         this.publishedAt = publishedAt;

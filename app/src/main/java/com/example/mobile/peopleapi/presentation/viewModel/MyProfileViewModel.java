@@ -36,7 +36,7 @@ public class MyProfileViewModel extends ViewModel {
                         }
                     });
         } else {
-            error.setValue("Incorrect password");
+            error.setValue("Incorrect email");
         }
     }
 

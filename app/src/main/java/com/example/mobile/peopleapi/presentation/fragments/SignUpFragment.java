@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mobile.R;
-import com.example.mobile.peopleapi.presentation.clickListener.ISignUp;
+import com.example.mobile.peopleapi.presentation.listener.ISignUp;
 import com.example.mobile.peopleapi.presentation.viewModel.SignUpViewModel;
 
 import org.jetbrains.annotations.NotNull;

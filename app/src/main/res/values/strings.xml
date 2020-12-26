@@ -1,4 +1,4 @@
-<resources >
+<resources>
     <string name="main">Mobile</string>
     <string name="signUp">Sign up</string>
     <string name="signIn">Sign in</string>
@@ -21,4 +21,10 @@
     <string name="author">Author</string>
     <string name="brief_description">Brief description</string>
     <string name="_01_january_1990">01 January 1990</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

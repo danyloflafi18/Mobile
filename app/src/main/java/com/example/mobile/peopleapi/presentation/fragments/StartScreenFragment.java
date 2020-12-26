@@ -18,10 +18,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.mobile.R;
 import com.example.mobile.peopleapi.presentation.activities.NewsActivity;
-import com.example.mobile.peopleapi.presentation.clickListener.OnNewsListener;
-import com.example.mobile.peopleapi.presentation.clickListener.OnProfileListener;
+import com.example.mobile.peopleapi.presentation.listener.OnNewsListener;
+import com.example.mobile.peopleapi.presentation.listener.OnProfileListener;
 import com.example.mobile.peopleapi.presentation.people_list.PeopleAdapter;
-import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
+import com.example.mobile.peopleapi.presentation.ui_data.NewsViewData;
 import com.example.mobile.peopleapi.presentation.viewModel.NewsViewModel;
 import com.example.mobile.peopleapi.presentation.viewModel.ViewModelFactory;
 
@@ -35,7 +35,7 @@ public class StartScreenFragment extends Fragment implements OnNewsListener {
     private SwipeRefreshLayout swipeRefreshLayout;
     private NewsViewModel newsViewModel;
     private ProgressBar loadingIndicator;
-    private final List<UserViewData> userList = new ArrayList<>();
+    private final List<NewsViewData> userList = new ArrayList<>();
     private OnProfileListener onProfileListener;
 
 
@@ -117,7 +117,7 @@ public class StartScreenFragment extends Fragment implements OnNewsListener {
     public void onNewsClick(int position) {
         Intent intent = new Intent(getActivity(), NewsActivity.class);
 
-        UserViewData userViewData = userList.get(position);
+        NewsViewData userViewData = userList.get(position);
         intent.putExtra("urlToImage", userViewData.getUrlToImage());
         intent.putExtra("title", userViewData.getTitle());
         intent.putExtra("author", userViewData.getAuthor());

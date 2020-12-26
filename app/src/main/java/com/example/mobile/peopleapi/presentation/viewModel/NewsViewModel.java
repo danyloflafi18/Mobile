@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.mobile.peopleapi.domain.entity.Article;
-import com.example.mobile.peopleapi.domain.use_cases.LoadUserUseCase;
-import com.example.mobile.peopleapi.presentation.ui_data.UserViewData;
+import com.example.mobile.peopleapi.domain.use_cases.LoadNewsUseCase;
+import com.example.mobile.peopleapi.presentation.ui_data.NewsViewData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,24 +17,24 @@ import timber.log.Timber;
 
 public class NewsViewModel extends ViewModel {
 
-    private final LoadUserUseCase loadUserUseCase;
+    private final LoadNewsUseCase loadUserUseCase;
 
     private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     private final MutableLiveData<String> errorMessage = new MutableLiveData<>();
-    private final MutableLiveData<List<UserViewData>> responseData = new MutableLiveData<>();
+    private final MutableLiveData<List<NewsViewData>> responseData = new MutableLiveData<>();
 
-    public NewsViewModel(LoadUserUseCase loadUserUseCase) {
+    public NewsViewModel(LoadNewsUseCase loadUserUseCase) {
         this.loadUserUseCase = loadUserUseCase;
     }
 
     public void loadUserList() {
         compositeDisposable.add(
-        loadUserUseCase.loadUser()
+        loadUserUseCase.loadNews()
                 .map(data -> {
-                    List<UserViewData> result = new ArrayList<>();
+                    List<NewsViewData> result = new ArrayList<>();
                     for (Article item : data.getArticles()) {
-                        UserViewData userViewData = new UserViewData(
+                        NewsViewData userViewData = new NewsViewData(
                                 item.getAuthor(),
                                 item.getTitle(),
                                 item.getPublishedAt(),
@@ -59,14 +59,13 @@ public class NewsViewModel extends ViewModel {
         return errorMessage;
     }
 
-    public MutableLiveData<List<UserViewData>> getResponseData() {
+    public MutableLiveData<List<NewsViewData>> getResponseData() {
         return responseData;
     }
 
     @Override
     protected void onCleared(){
         super.onCleared();
-
         compositeDisposable.dispose();
     }
 }
